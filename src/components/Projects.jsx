@@ -1,0 +1,80 @@
+import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
+
+const Projects = () => {
+  const { t } = useLanguage()
+
+  const projects = [
+    {
+      title: t('proj.itau.title'),
+      description: t('proj.itau.description'),
+      tech: ['Angular', 'TypeScript', 'NgRx', 'Microfrontend', 'AWS', 'Cypress', 'Jest'],
+      link: '#'
+    },
+    {
+      title: t('proj.cox.title'),
+      description: t('proj.cox.description'),
+      tech: ['React', 'TypeScript', 'Redux', 'Lerna', 'Monorepo', 'Webpack'],
+      link: '#'
+    },
+    {
+      title: t('proj.santander.title'),
+      description: t('proj.santander.description'),
+      tech: ['COBOL', 'JCL', 'Batch Processing', 'Mainframe'],
+      link: '#'
+    }
+  ]
+
+  return (
+    <section id="projects" className="py-20 lg:py-24 scroll-mt-0" aria-label="Featured projects">
+      <div className="w-full">
+        <div className="space-y-16">
+          {projects.map((project, index) => (
+            <motion.a
+              key={index}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block relative grid lg:grid-cols-12 gap-4 lg:gap-8 transition-all duration-300 hover:!opacity-100 group-hover/list:opacity-50 p-6 rounded-lg hover:bg-slate-800/50 hover:shadow-lg"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-100px", amount: 0.3 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+            >
+              <div className="lg:col-span-4 mb-4 lg:mb-0">
+                <div className="relative overflow-hidden rounded border-2 border-slate-700/50 group-hover:border-slate-600 transition-all duration-300">
+                  <div className="aspect-video bg-slate-800 flex items-center justify-center">
+                    <span className="text-slate-600 text-sm">Project Image</span>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-8">
+                <h3 className="text-base font-semibold text-slate-200 group-hover:text-blue-400 transition-colors duration-300 flex items-center gap-2">
+                  {project.title}
+                  <svg className="w-4 h-4 -translate-y-1 translate-x-0 group-hover:translate-x-1 group-hover:-translate-y-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </h3>
+                <p className="mt-2 text-sm text-slate-400 leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.tech.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 text-xs font-medium text-blue-400 bg-blue-400/10 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Projects

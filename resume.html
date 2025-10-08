@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oséas Silva Fernandes - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #000000;
+            background: white;
+            padding: 40px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .dev-notice {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: #856404;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #000000;
+        }
+
+        .header h1 {
+            font-size: 34px;
+            color: #000000;
+            margin-bottom: 6px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .header .title {
+            font-size: 16px;
+            color: #333333;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            color: #333333;
+        }
+
+        .contact-info span {
+            display: block;
+            line-height: 1.5;
+        }
+
+        .section {
+            margin-bottom: 22px;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #000000;
+            font-weight: 700;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 1.5px solid #000000;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .summary {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #1a1a1a;
+            text-align: justify;
+        }
+
+        .job {
+            margin-bottom: 18px;
+            page-break-inside: avoid;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .job-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #000000;
+        }
+
+        .job-date {
+            font-size: 12px;
+            color: #4a4a4a;
+            font-style: italic;
+        }
+
+        .company {
+            font-size: 14px;
+            color: #1a1a1a;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .job-description {
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .job-description li {
+            font-size: 12.5px;
+            line-height: 1.6;
+            margin-bottom: 6px;
+            margin-left: 18px;
+            color: #1a1a1a;
+        }
+
+        .technologies {
+            margin-top: 8px;
+            font-size: 11.5px;
+            color: #333333;
+        }
+
+        .technologies strong {
+            color: #000000;
+            font-weight: 600;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            font-size: 12.5px;
+        }
+
+        .skill-category {
+            margin-bottom: 8px;
+        }
+
+        .skill-category strong {
+            color: #000000;
+            display: block;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .skill-category span {
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
+
+        .education-item {
+            margin-bottom: 12px;
+        }
+
+        .education-item .degree {
+            font-size: 14px;
+            font-weight: 700;
+            color: #000000;
+        }
+
+        .education-item .school {
+            font-size: 13px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .education-item .date {
+            font-size: 12px;
+            color: #4a4a4a;
+            font-style: italic;
+        }
+
+        .languages {
+            display: flex;
+            gap: 30px;
+            font-size: 13px;
+        }
+
+        .languages div {
+            display: flex;
+            gap: 8px;
+        }
+
+        .languages strong {
+            color: #000000;
+            font-weight: 600;
+        }
+
+        .languages span {
+            color: #1a1a1a;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+            }
+
+            .dev-notice {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            @page {
+                margin: 0.5in;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dev-notice">
+        🚧 Site em desenvolvimento 🚧
+    </div>
+
+    <div class="header">
+        <h1>OSÉAS SILVA FERNANDES</h1>
+        <div class="title">Mid-Level Software Engineer</div>
+        <div class="contact-info">
+            <span>Vila Independência, São Paulo, SP</span>
+            <span>oseas.fernandes@icloud.com</span>
+            <span>(11) 96767-2536</span>
+            <span>linkedin.com/in/oseasfernandes</span>
+            <span>github.com/ozefernan</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary">
+            Mid-Level Software Engineer with 6+ years of experience in software development, specializing in modern frontend technologies and cloud architectures. Proven track record of delivering scalable solutions across banking and automation sectors, with expertise in Angular, React, and microservices architecture. Strong background in legacy system modernization and cross-functional team collaboration.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Mid-Level Software Engineer</div>
+                <div class="job-date">April 2023 - Present</div>
+            </div>
+            <div class="company">Itaú Unibanco | São Paulo, Brazil</div>
+            <ul class="job-description">
+                <li>Lead the modernization of corporate insurance after-sales platform, improving system performance and user experience across all Itaú digital channels</li>
+                <li>Develop and maintain frontend applications using Angular, TypeScript, and RxJS with NgRx for state management, ensuring code quality through comprehensive Jest unit tests</li>
+                <li>Implement end-to-end testing automation using Cypress, reducing QA time by identifying critical bugs early in the development cycle</li>
+                <li>Design and deploy microfrontend architecture solutions integrated with AWS cloud services, enhancing scalability and deployment efficiency</li>
+                <li>Collaborate with product managers and UX designers to translate business requirements into technical solutions for corporate clients</li>
+            </ul>
+            <div class="technologies"><strong>Key Technologies:</strong> Angular, TypeScript, RxJS, NgRx, Jest, Cypress, Microfrontend Architecture, AWS</div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Mid-Level Software Engineer</div>
+                <div class="job-date">April 2020 - April 2023</div>
+            </div>
+            <div class="company">Cox Automation Inc. | Remote (Canada)</div>
+            <ul class="job-description">
+                <li>Collaborated with cross-functional teams including designers, product managers, and stakeholders to deliver high-quality features on schedule</li>
+                <li>Developed modern, performant, and maintainable applications using JavaScript, TypeScript, and React (Hooks and Redux) across multiple platforms</li>
+                <li>Architected and maintained modular monorepo infrastructure using Lerna, streamlining development workflow and code sharing across projects</li>
+                <li>Integrated various content management systems and third-party APIs to enhance product functionality</li>
+                <li>Participated in code reviews and mentored junior developers on best practices and coding standards</li>
+            </ul>
+            <div class="technologies"><strong>Key Technologies:</strong> React, TypeScript, JavaScript, Redux, Lerna, Monorepo Architecture, CMS Integration</div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Junior Software Engineer</div>
+                <div class="job-date">January 2018 - April 2020</div>
+            </div>
+            <div class="company">Santander Tecnologia | São Paulo, Brazil</div>
+            <ul class="job-description">
+                <li>Maintained and developed new features for critical banking transaction systems handling account debits and credits</li>
+                <li>Programmed in COBOL and JCL for mainframe batch processing, ensuring high reliability and data integrity</li>
+                <li>Troubleshot and resolved production issues in legacy banking systems, minimizing downtime and service disruptions</li>
+                <li>Collaborated with senior engineers to understand complex business logic and banking operations</li>
+            </ul>
+            <div class="technologies"><strong>Key Technologies:</strong> COBOL, JCL, Batch Processing, Mainframe Systems</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <strong>Frontend Development:</strong>
+                <span>React.js (Hooks, Context API, Router), Angular, JavaScript, TypeScript, ES6+, HTML5, CSS3, Responsive Design</span>
+            </div>
+            <div class="skill-category">
+                <strong>State Management & Testing:</strong>
+                <span>Redux, NgRx, RxJS, Jest, Cypress, React Testing Library, Unit & E2E Testing</span>
+            </div>
+            <div class="skill-category">
+                <strong>Styling & UI:</strong>
+                <span>Styled-components, CSS Modules, Tailwind CSS, shadcn/ui, SASS/SCSS</span>
+            </div>
+            <div class="skill-category">
+                <strong>Tools & DevOps:</strong>
+                <span>Git, Webpack, Vite, Docker, CI/CD (GitHub Actions, Jenkins), npm, Datadog, Google Analytics</span>
+            </div>
+            <div class="skill-category">
+                <strong>Architecture & Cloud:</strong>
+                <span>Microfrontend (MFE), BFF, Atomic Design, AWS (S3, CloudFront, Lambda), RESTful APIs, Axios, Performance Optimization</span>
+            </div>
+            <div class="skill-category">
+                <strong>Backend & Databases:</strong>
+                <span>Node.js, MongoDB, COBOL, JCL, Mainframe Systems</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="education-item">
+            <div class="degree">Bachelor's Degree in Information Systems</div>
+            <div class="school">Faculdade Impacta de Tecnologia</div>
+            <div class="date">2017 - 2020 | São Paulo, Brazil</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Languages</h2>
+        <div class="languages">
+            <div><strong>Portuguese:</strong> <span>Native</span></div>
+            <div><strong>English:</strong> <span>Intermediate (B1/B2)</span></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+import { useEffect, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
+import { LanguageProvider } from './contexts/LanguageContext'
+import Hero from './components/Hero'
+import About from './components/About'
+import Experience from './components/Experience'
+import Projects from './components/Projects'
+import Footer from './components/Footer'
+import LanguageToggle from './components/LanguageToggle'
+import DevNotice from './components/DevNotice'
+import StarWars from './components/StarWars'
+
+function App() {
+  const [showStarWars, setShowStarWars] = useState(false)
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const x = (e.clientX / window.innerWidth) * 100
+      const y = (e.clientY / window.innerHeight) * 100
+      document.documentElement.style.setProperty('--mouse-x', `${x}%`)
+      document.documentElement.style.setProperty('--mouse-y', `${y}%`)
+      document.body.classList.add('mouse-active')
+    }
+
+    const handleMouseLeave = () => {
+      document.body.classList.remove('mouse-active')
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('mouseleave', handleMouseLeave)
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('mouseleave', handleMouseLeave)
+    }
+  }, [])
+
+  return (
+    <LanguageProvider>
+      {/* Fixed Development Notice */}
+      <DevNotice />
+
+      {/* Fixed Language Toggle Button */}
+      <LanguageToggle />
+
+      <div className="relative min-h-screen">
+        {/* Gradient background effect */}
+        <div className="fixed inset-0 -z-10">
+          <div className="absolute inset-0 bg-slate-950"></div>
+          <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-blue-500/5 blur-3xl animate-blob"></div>
+          <div className="absolute top-0 right-1/4 w-1/2 h-1/2 bg-purple-500/5 blur-3xl animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-indigo-500/5 blur-3xl animate-blob animation-delay-4000"></div>
+        </div>
+
+        {/* Two column layout */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-8 min-h-screen gap-8 lg:gap-24">
+            {/* Left column - Fixed Hero */}
+            <div className="lg:col-span-3 lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col lg:justify-center lg:py-24">
+              <Hero onStarWarsClick={() => setShowStarWars(true)} />
+            </div>
+
+            {/* Right column - Scrollable content */}
+            <div className="lg:col-span-5 py-12 lg:py-24">
+              <About />
+              <Experience />
+              <Projects />
+              <Footer />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Star Wars Intro Modal */}
+      <AnimatePresence>
+        {showStarWars && <StarWars onClose={() => setShowStarWars(false)} />}
+      </AnimatePresence>
+    </LanguageProvider>
+  )
+}
+
+export default App
