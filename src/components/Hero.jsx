@@ -33,10 +33,10 @@ const Hero = ({ onStarWarsClick }) => {
   }, []);
 
   return (
-    <section className="py-12 lg:py-0" aria-label="Introduction">
+    <section className="px-4 lg:px-0 lg:py-0" aria-label="Introduction">
       <div className="w-full">
         <motion.h1
-          className="text-3xl lg:text-5xl font-bold text-slate-200 mb-2"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-200 mb-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -44,7 +44,7 @@ const Hero = ({ onStarWarsClick }) => {
           Oséas Fernandes
         </motion.h1>
         <motion.h2
-          className="text-xl lg:text-1xl font-bold text-slate-400 mb-4"
+          className="text-lg sm:text-xl lg:text-1xl font-bold text-slate-400 mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -52,7 +52,7 @@ const Hero = ({ onStarWarsClick }) => {
           {t('hero.title')}
         </motion.h2>
         <motion.p
-          className="text-sm lg:text-base text-slate-400 leading-relaxed"
+          className="text-base lg:text-base text-slate-400 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -60,9 +60,9 @@ const Hero = ({ onStarWarsClick }) => {
           {t('hero.description')}
         </motion.p>
 
-        {/* Navigation */}
+        {/* Navigation - Hidden on mobile */}
         <motion.nav
-          className="mt-12 flex flex-col gap-4"
+          className="hidden lg:flex mt-12 flex-col gap-4"
           aria-label="Main navigation"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -127,9 +127,9 @@ const Hero = ({ onStarWarsClick }) => {
           </a>
         </motion.nav>
 
-        {/* Social links */}
+        {/* Social links - Hidden on mobile */}
         <motion.div
-          className="mt-12 flex gap-5"
+          className="hidden lg:flex mt-12 gap-5"
           role="navigation"
           aria-label="Social media links"
           initial={{ opacity: 0, y: 20 }}
@@ -171,10 +171,10 @@ const Hero = ({ onStarWarsClick }) => {
           </a>
         </motion.div>
 
-        {/* Star Wars Button */}
+        {/* Star Wars Button - Hidden on mobile */}
         <motion.button
           onClick={onStarWarsClick}
-          className="mt-8 px-6 py-3 bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 hover:border-yellow-400/50 rounded-lg transition-all duration-300 hover:scale-105 group"
+          className="hidden lg:flex mt-8 px-6 py-3 bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 hover:border-yellow-400/50 rounded-lg transition-all duration-300 hover:scale-105 group items-center gap-2"
           aria-label="Ver Intro Star Wars"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

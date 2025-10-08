@@ -3,6 +3,7 @@ import { useLanguage } from '../contexts/LanguageContext'
 
 const Experience = () => {
   const { t } = useLanguage()
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024
 
   const experiences = [
     {
@@ -29,18 +30,22 @@ const Experience = () => {
   ]
 
   return (
-    <section id="experience" className="py-20 lg:py-24 scroll-mt-0" aria-label="Work experience">
+    <section id="experience" className="py-12 sm:py-16 lg:py-24 scroll-mt-0" aria-label="Work experience">
       <div className="w-full">
-        <h2 className="sr-only">Work Experience</h2>
-        <div className="space-y-12">
+        {/* Section Title - Visible only on mobile */}
+        <h2 className="lg:hidden text-sm font-bold text-slate-200 uppercase tracking-widest mb-8" id="experience-title">
+          {t('hero.nav.experience')}
+        </h2>
+        <h2 className="sr-only lg:block">Work Experience</h2>
+        <div className="space-y-8 sm:space-y-12">
           {experiences.map((exp, index) => (
             <motion.article
               key={index}
               className="group relative grid lg:grid-cols-4 gap-4 lg:gap-8 transition-all duration-300 hover:!opacity-100 group-hover/list:opacity-50 p-4 lg:p-6 rounded-lg hover:bg-slate-800/50 hover:shadow-lg"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, margin: "-100px", amount: 0.4 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              initial={isMobile ? { opacity: 1 } : { opacity: 0, y: 30 }}
+              whileInView={isMobile ? { opacity: 1 } : { opacity: 1, y: 0 }}
+              viewport={isMobile ? {} : { once: false, margin: "-100px", amount: 0.4 }}
+              transition={isMobile ? {} : { duration: 0.5, delay: index * 0.1 }}
               role="article"
               aria-label={`${exp.role} at ${exp.company}`}
             >

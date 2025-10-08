@@ -3,6 +3,7 @@ import { useLanguage } from '../contexts/LanguageContext'
 
 const Projects = () => {
   const { t } = useLanguage()
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024
 
   const projects = [
     {
@@ -26,9 +27,13 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="py-20 lg:py-24 scroll-mt-0" aria-label="Featured projects">
+    <section id="projects" className="py-12 sm:py-16 lg:py-24 scroll-mt-0" aria-label="Featured projects">
       <div className="w-full">
-        <div className="space-y-16">
+        {/* Section Title - Visible only on mobile */}
+        <h2 className="lg:hidden text-sm font-bold text-slate-200 uppercase tracking-widest mb-8" id="projects-title">
+          {t('hero.nav.projects')}
+        </h2>
+        <div className="space-y-10 sm:space-y-16">
           {projects.map((project, index) => (
             <motion.a
               key={index}
@@ -36,10 +41,10 @@ const Projects = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="group block relative grid lg:grid-cols-12 gap-4 lg:gap-8 transition-all duration-300 hover:!opacity-100 group-hover/list:opacity-50 p-6 rounded-lg hover:bg-slate-800/50 hover:shadow-lg"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, margin: "-100px", amount: 0.3 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              initial={isMobile ? { opacity: 1 } : { opacity: 0, y: 40 }}
+              whileInView={isMobile ? { opacity: 1 } : { opacity: 1, y: 0 }}
+              viewport={isMobile ? {} : { once: false, margin: "-100px", amount: 0.3 }}
+              transition={isMobile ? {} : { duration: 0.6, delay: index * 0.15 }}
             >
               <div className="lg:col-span-4 mb-4 lg:mb-0">
                 <div className="relative overflow-hidden rounded border-2 border-slate-700/50 group-hover:border-slate-600 transition-all duration-300">

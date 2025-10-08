@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import LanguageToggle from './components/LanguageToggle'
 import DevNotice from './components/DevNotice'
 import StarWars from './components/StarWars'
+import MobileHeader from './components/MobileHeader'
 
 function App() {
   const [showStarWars, setShowStarWars] = useState(false)
@@ -36,6 +37,9 @@ function App() {
 
   return (
     <LanguageProvider>
+      {/* Mobile Header */}
+      <MobileHeader />
+
       {/* Fixed Development Notice */}
       <DevNotice />
 
@@ -52,15 +56,15 @@ function App() {
         </div>
 
         {/* Two column layout */}
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-8 min-h-screen gap-8 lg:gap-24">
-            {/* Left column - Fixed Hero */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="lg:grid lg:grid-cols-8 min-h-screen gap-6 sm:gap-8 lg:gap-24">
+            {/* Left column - Fixed Hero on desktop */}
             <div className="lg:col-span-3 lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col lg:justify-center lg:py-24">
               <Hero onStarWarsClick={() => setShowStarWars(true)} />
             </div>
 
             {/* Right column - Scrollable content */}
-            <div className="lg:col-span-5 py-12 lg:py-24">
+            <div className="w-full pt-16 pb-12 lg:pt-6 lg:col-span-5 lg:py-24">
               <About />
               <Experience />
               <Projects />
