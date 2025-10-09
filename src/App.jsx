@@ -10,9 +10,12 @@ import LanguageToggle from './components/LanguageToggle'
 import DevNotice from './components/DevNotice'
 import StarWars from './components/StarWars'
 import MobileHeader from './components/MobileHeader'
+import MatrixRain from './components/MatrixRain'
 
 function App() {
   const [showStarWars, setShowStarWars] = useState(false)
+  const [showMatrix, setShowMatrix] = useState(false)
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       const x = (e.clientX / window.innerWidth) * 100
@@ -37,11 +40,16 @@ function App() {
 
   return (
     <LanguageProvider>
+      {/* Matrix Rain Effect - Highest z-index */}
+      {showMatrix && (
+        <MatrixRain duration={10000} onComplete={() => setShowMatrix(false)} />
+      )}
+
       {/* Mobile Header */}
       <MobileHeader />
 
       {/* Fixed Development Notice */}
-      <DevNotice />
+      {!showMatrix && <DevNotice />}
 
       {/* Fixed Language Toggle Button */}
       <LanguageToggle />
@@ -60,7 +68,11 @@ function App() {
           <div className="lg:grid lg:grid-cols-8 min-h-screen gap-6 sm:gap-8 lg:gap-24">
             {/* Left column - Fixed Hero on desktop */}
             <div className="lg:col-span-3 lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col lg:justify-center lg:py-24">
-              <Hero onStarWarsClick={() => setShowStarWars(true)} />
+              <Hero
+                onStarWarsClick={() => setShowStarWars(true)}
+                showMatrix={showMatrix}
+                setShowMatrix={setShowMatrix}
+              />
             </div>
 
             {/* Right column - Scrollable content */}

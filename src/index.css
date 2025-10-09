@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.cdnfonts.com/css/star-jedi");
 
 @layer base {
   * {
@@ -190,31 +191,29 @@ body.mouse-active::before {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   overflow: hidden;
-  perspective: 350px;
-  perspective-origin: 50% 50%;
+  perspective: 600px;
+  perspective-origin: 50% 100%;
   color: #feda4a;
   z-index: 10;
 }
 
 .intro-text {
   position: relative;
-  top: 9999px;
-  width: 100%;
-  max-width: 2000px;
+  width: 200%;
+  max-width: 800px;
   font-family: "Inter", sans-serif;
-  color: #fed34f;
+  color: #feda4a;
   text-align: justify;
   z-index: 10;
-  padding: 0 10px;
+  padding: 0 40px;
   transform-origin: 50% 100%;
-  opacity: 0;
-  animation: crawl 80s linear forwards;
-  animation-delay: 8s;
+  animation: crawl 60s linear forwards;
+  animation-delay: 6s;
 }
 
 @keyframes showText {
@@ -244,18 +243,23 @@ body.mouse-active::before {
 @keyframes logoFade {
   0% {
     opacity: 0;
-    transform: translateY(-50%) scale(0);
+    transform: translateY(-50%) scale(0.5);
   }
-  10% {
+  15% {
     opacity: 1;
+    transform: translateY(-50%) scale(1.1);
   }
-  20% {
+  25% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+  75% {
     opacity: 1;
     transform: translateY(-50%) scale(1);
   }
-  80% {
-    opacity: 1;
-    transform: translateY(-50%) scale(1);
+  90% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.5);
   }
   100% {
     opacity: 0;
@@ -265,14 +269,17 @@ body.mouse-active::before {
 
 .star-wars-logo {
   margin: 0;
-  font-family: "Inter", sans-serif;
-  font-weight: 900;
-  font-size: clamp(3rem, 15vw, 8rem);
-  color: #feda4a;
+  font-family: "Star Jedi", "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 12vw, 7rem);
+  color: transparent;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.08em;
   text-align: center;
-  filter: drop-shadow(0 0 20px rgba(254, 218, 74, 0.8));
+  -webkit-text-stroke: 2px #feda4a;
+  text-stroke: 2px #feda4a;
+  filter: drop-shadow(0 0 20px rgba(254, 218, 74, 0.9))
+    drop-shadow(0 0 40px rgba(254, 218, 74, 0.6));
   line-height: 1;
 }
 
@@ -284,48 +291,42 @@ body.mouse-active::before {
 .title {
   font-size: 90%;
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 
 .title p {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  margin-bottom: 20px;
   color: #4bd5ee;
   font-weight: 400;
-  letter-spacing: 8px;
+  letter-spacing: 6px;
 }
 
 .title h1 {
-  font-size: 5rem;
+  font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 700;
   margin: 0;
-  letter-spacing: 10px;
+  letter-spacing: 8px;
   text-transform: uppercase;
 }
 
 .crawl-text {
-  font-size: 2.5rem;
-  line-height: 2.8;
-  margin-bottom: 160px;
+  font-size: clamp(1.2rem, 1.5vw, 2rem);
+  line-height: 1.8;
+  margin-bottom: 80px;
   font-weight: 400;
-  text-indent: 3em;
+  text-indent: 2em;
 }
 
 @keyframes crawl {
   0% {
-    top: 0;
-    transform: rotateX(65deg) translateZ(200px);
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
-  95% {
+    top: 100vh;
+    transform: rotateX(20deg) translateZ(0);
     opacity: 1;
   }
   100% {
     top: -6000px;
-    transform: rotateX(70deg) translateZ(-3000px);
+    transform: rotateX(25deg) translateZ(-2500px);
     opacity: 0;
   }
 }

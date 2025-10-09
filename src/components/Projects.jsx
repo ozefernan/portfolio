@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const Projects = () => {
   const { t } = useLanguage();
   const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const projects = [
     {
@@ -55,15 +57,18 @@ const Projects = () => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block relative grid lg:grid-cols-12 gap-4 lg:gap-8 transition-all duration-300 hover:!opacity-100 group-hover/list:opacity-50 p-6 rounded-lg hover:bg-slate-800/50 hover:shadow-lg"
-              initial={isMobile ? { opacity: 1 } : { opacity: 0, y: 40 }}
-              whileInView={isMobile ? { opacity: 1 } : { opacity: 1, y: 0 }}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className="group block relative grid lg:grid-cols-12 gap-4 lg:gap-8 transition-all duration-300 p-6 rounded-lg hover:bg-slate-800/50 hover:shadow-lg"
+              initial={isMobile ? {} : { y: 40 }}
+              whileInView={isMobile ? {} : { y: 0 }}
+              animate={{
+                opacity: hoveredIndex !== null && hoveredIndex !== index ? 0.5 : 1
+              }}
               viewport={
                 isMobile ? {} : { once: false, margin: "-100px", amount: 0.3 }
               }
-              transition={
-                isMobile ? {} : { duration: 0.6, delay: index * 0.15 }
-              }
+              transition={{ duration: 0.3 }}
             >
               <div className="lg:col-span-4 mb-4 lg:mb-0">
                 <div className="relative overflow-hidden rounded border-2 border-slate-700/50 group-hover:border-slate-600 transition-all duration-300">

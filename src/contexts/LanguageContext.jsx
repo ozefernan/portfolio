@@ -12,8 +12,8 @@ export const useLanguage = () => {
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(() => {
-    // Get from localStorage or default to Portuguese
-    return localStorage.getItem('language') || 'pt'
+    // Get from localStorage or default to English
+    return localStorage.getItem('language') || 'en'
   })
 
   useEffect(() => {
@@ -52,6 +52,7 @@ const translations = {
     'hero.nav.projects': 'Projetos',
     'hero.starwars': 'May the Force be with you',
     'hero.devNotice': 'Portfólio em desenvolvimento',
+    'hero.easterEggHint': 'tente clicar em mim',
 
     // About
     'about.p1.intro': 'Sou um',
@@ -105,6 +106,7 @@ const translations = {
     'hero.nav.projects': 'Projects',
     'hero.starwars': 'May the Force be with you',
     'hero.devNotice': 'Portfolio under development',
+    'hero.easterEggHint': 'try clicking me',
 
     // About
     'about.p1.intro': 'I am a',

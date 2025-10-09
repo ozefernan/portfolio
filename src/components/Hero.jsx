@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../contexts/LanguageContext";
 
-const Hero = ({ onStarWarsClick }) => {
+const Hero = ({ onStarWarsClick, showMatrix, setShowMatrix }) => {
   const { t } = useLanguage();
   const [activeSection, setActiveSection] = useState("about");
+  const [clickCount, setClickCount] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,6 +33,22 @@ const Hero = ({ onStarWarsClick }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNameClick = () => {
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+
+    if (newCount === 7) {
+      // Trigger Matrix effect
+      setShowMatrix(true);
+      setClickCount(0);
+    }
+
+    // Reset counter after 2 seconds of inactivity
+    setTimeout(() => {
+      if (clickCount < 6) setClickCount(0);
+    }, 2000);
+  };
+
   return (
     <section
       className="px-4 pt-24 lg:px-0 lg:pt-0 lg:py-0"
@@ -39,12 +56,28 @@ const Hero = ({ onStarWarsClick }) => {
     >
       <div className="w-full">
         <motion.h1
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-200 mb-2"
+          onClick={handleNameClick}
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-200 mb-2 cursor-pointer select-none relative group"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           Oséas Fernandes
+          {/* Hint tooltip */}
+          <span className="absolute -top-8 left-0 text-xs text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            {t("hero.easterEggHint")}
+          </span>
+          {/* Click counter */}
+          {clickCount > 0 && clickCount < 7 && (
+            <motion.span
+              className="absolute -top-8 right-0 text-sm text-green-400 font-mono"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0 }}
+            >
+              {clickCount}/7
+            </motion.span>
+          )}
         </motion.h1>
         <motion.h2
           className="text-lg sm:text-xl lg:text-1xl font-bold text-slate-400 mb-4"
@@ -130,9 +163,9 @@ const Hero = ({ onStarWarsClick }) => {
           </a>
         </motion.nav>
 
-        {/* Social links - Hidden on mobile */}
+        {/* Social links */}
         <motion.div
-          className="hidden lg:flex mt-12 gap-5"
+          className="flex mt-8 lg:mt-12 gap-5"
           role="navigation"
           aria-label="Social media links"
           initial={{ opacity: 0, y: 20 }}
@@ -140,7 +173,7 @@ const Hero = ({ onStarWarsClick }) => {
           transition={{ duration: 0.6, delay: 1.0 }}
         >
           <a
-            href="https://github.com/ozefernan"
+            href="https://github.com/ozzyfernan"
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-400 hover:text-slate-200 transition-colors duration-300"
@@ -162,7 +195,7 @@ const Hero = ({ onStarWarsClick }) => {
             </svg>
           </a>
           <a
-            href="https://www.instagram.com/ozefernan"
+            href="https://www.instagram.com/ozzyfernan"
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-400 hover:text-slate-200 transition-colors duration-300"
@@ -174,8 +207,8 @@ const Hero = ({ onStarWarsClick }) => {
           </a>
         </motion.div>
 
-        {/* Star Wars Button - Hidden on mobile */}
-        <motion.button
+        {/* Star Wars Button - Temporarily hidden */}
+        {/* <motion.button
           onClick={onStarWarsClick}
           className="hidden lg:flex mt-8 px-6 py-3 bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 hover:border-yellow-400/50 rounded-lg transition-all duration-300 hover:scale-105 group items-center gap-2"
           aria-label="Ver Intro Star Wars"
@@ -195,7 +228,7 @@ const Hero = ({ onStarWarsClick }) => {
               {t("hero.starwars")}
             </span>
           </span>
-        </motion.button>
+        </motion.button> */}
       </div>
     </section>
   );
