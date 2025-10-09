@@ -207,6 +207,35 @@ const Hero = ({ onStarWarsClick, showMatrix, setShowMatrix }) => {
           </a>
         </motion.div>
 
+        {/* Resume Button */}
+        <motion.a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-slate-800/50 hover:bg-slate-700/50 text-slate-200 border border-slate-600/50 hover:border-slate-500 rounded-lg transition-all duration-300 hover:scale-105 group"
+          aria-label={t("hero.resume")}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+        >
+          <svg
+            className="w-5 h-5 group-hover:scale-110 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+            />
+          </svg>
+          <span className="text-sm font-semibold uppercase tracking-wide">
+            {t("hero.resume")}
+          </span>
+        </motion.a>
+
         {/* Star Wars Button - Temporarily hidden */}
         {/* <motion.button
           onClick={onStarWarsClick}

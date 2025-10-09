@@ -53,6 +53,7 @@ const translations = {
     'hero.starwars': 'May the Force be with you',
     'hero.devNotice': 'Portfólio em desenvolvimento',
     'hero.easterEggHint': 'tente clicar em mim',
+    'hero.resume': 'Ver Currículo',
 
     // About
     'about.p1.intro': 'Sou um',
@@ -107,6 +108,7 @@ const translations = {
     'hero.starwars': 'May the Force be with you',
     'hero.devNotice': 'Portfolio under development',
     'hero.easterEggHint': 'try clicking me',
+    'hero.resume': 'View Resume',
 
     // About
     'about.p1.intro': 'I am a',
