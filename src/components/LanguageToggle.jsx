@@ -6,7 +6,7 @@ const LanguageToggle = () => {
   return (
     <button
       onClick={toggleLanguage}
-      className="fixed bottom-6 right-6 z-50 group flex items-center gap-2 px-4 py-3 bg-slate-800/30 hover:bg-slate-700/80 border border-slate-700/30 hover:border-slate-600/80 rounded-lg transition-all duration-500 opacity-40 hover:opacity-100 backdrop-blur-sm shadow-lg hover:shadow-xl hover:scale-105"
+      className="fixed bottom-6 right-6 z-50 group flex items-center gap-2 px-4 py-3 bg-slate-800/30 hover:bg-slate-700/80 border border-slate-700/30 hover:border-slate-600/80 rounded-lg transition-all duration-500 lg:opacity-40 hover:opacity-100 backdrop-blur-sm shadow-lg hover:shadow-xl hover:scale-105"
       aria-label="Toggle Language"
     >
       <svg

@@ -64,8 +64,10 @@ function App() {
             </div>
 
             {/* Right column - Scrollable content */}
-            <div className="w-full pt-16 pb-12 lg:pt-6 lg:col-span-5 lg:py-24">
-              <About />
+            <div className="w-full pt-16 pb-12 lg:pt-0 lg:col-span-5 lg:pb-24">
+              <div id="about" className="lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
+                <About />
+              </div>
               <Experience />
               <Projects />
               <Footer />

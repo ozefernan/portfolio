@@ -1,37 +1,52 @@
-import { motion } from 'framer-motion'
-import { useLanguage } from '../contexts/LanguageContext'
+import { motion } from "framer-motion";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Projects = () => {
-  const { t } = useLanguage()
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024
+  const { t } = useLanguage();
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
 
   const projects = [
     {
-      title: t('proj.itau.title'),
-      description: t('proj.itau.description'),
-      tech: ['Angular', 'TypeScript', 'NgRx', 'Microfrontend', 'AWS', 'Cypress', 'Jest'],
-      link: '#'
+      title: t("proj.itau.title"),
+      description: t("proj.itau.description"),
+      tech: [
+        "Angular",
+        "TypeScript",
+        "NgRx",
+        "Microfrontend",
+        "AWS",
+        "Cypress",
+        "Jest",
+      ],
+      link: "#",
     },
     {
-      title: t('proj.cox.title'),
-      description: t('proj.cox.description'),
-      tech: ['React', 'TypeScript', 'Redux', 'Lerna', 'Monorepo', 'Webpack'],
-      link: '#'
+      title: t("proj.cox.title"),
+      description: t("proj.cox.description"),
+      tech: ["React", "TypeScript", "Redux", "Lerna", "Monorepo", "Webpack"],
+      link: "#",
     },
     {
-      title: t('proj.santander.title'),
-      description: t('proj.santander.description'),
-      tech: ['COBOL', 'JCL', 'Batch Processing', 'Mainframe'],
-      link: '#'
-    }
-  ]
+      title: t("proj.santander.title"),
+      description: t("proj.santander.description"),
+      tech: ["COBOL", "JCL", "Batch Processing", "Mainframe"],
+      link: "#",
+    },
+  ];
 
   return (
-    <section id="projects" className="py-12 sm:py-16 lg:py-24 scroll-mt-0" aria-label="Featured projects">
+    <section
+      id="projects"
+      className="py-12 sm:py-16 lg:py-24"
+      aria-label="Featured projects"
+    >
       <div className="w-full">
         {/* Section Title - Visible only on mobile */}
-        <h2 className="lg:hidden text-sm font-bold text-slate-200 uppercase tracking-widest mb-8" id="projects-title">
-          {t('hero.nav.projects')}
+        <h2
+          className="lg:hidden text-sm font-bold text-slate-200 uppercase tracking-widest mb-4 px-4"
+          id="projects-title"
+        >
+          {t("hero.nav.projects")}
         </h2>
         <div className="space-y-10 sm:space-y-16">
           {projects.map((project, index) => (
@@ -43,21 +58,37 @@ const Projects = () => {
               className="group block relative grid lg:grid-cols-12 gap-4 lg:gap-8 transition-all duration-300 hover:!opacity-100 group-hover/list:opacity-50 p-6 rounded-lg hover:bg-slate-800/50 hover:shadow-lg"
               initial={isMobile ? { opacity: 1 } : { opacity: 0, y: 40 }}
               whileInView={isMobile ? { opacity: 1 } : { opacity: 1, y: 0 }}
-              viewport={isMobile ? {} : { once: false, margin: "-100px", amount: 0.3 }}
-              transition={isMobile ? {} : { duration: 0.6, delay: index * 0.15 }}
+              viewport={
+                isMobile ? {} : { once: false, margin: "-100px", amount: 0.3 }
+              }
+              transition={
+                isMobile ? {} : { duration: 0.6, delay: index * 0.15 }
+              }
             >
               <div className="lg:col-span-4 mb-4 lg:mb-0">
                 <div className="relative overflow-hidden rounded border-2 border-slate-700/50 group-hover:border-slate-600 transition-all duration-300">
                   <div className="aspect-video bg-slate-800 flex items-center justify-center">
-                    <span className="text-slate-600 text-sm">Project Image</span>
+                    <span className="text-slate-600 text-sm">
+                      Project Image
+                    </span>
                   </div>
                 </div>
               </div>
               <div className="lg:col-span-8">
                 <h3 className="text-base font-semibold text-slate-200 group-hover:text-blue-400 transition-colors duration-300 flex items-center gap-2">
                   {project.title}
-                  <svg className="w-4 h-4 -translate-y-1 translate-x-0 group-hover:translate-x-1 group-hover:-translate-y-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  <svg
+                    className="w-4 h-4 -translate-y-1 translate-x-0 group-hover:translate-x-1 group-hover:-translate-y-2 transition-transform duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
                   </svg>
                 </h3>
                 <p className="mt-2 text-sm text-slate-400 leading-relaxed">
@@ -79,7 +110,7 @@ const Projects = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
