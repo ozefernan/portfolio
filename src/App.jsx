@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion'
 import { LanguageProvider } from './contexts/LanguageContext'
 import Hero from './components/Hero'
 import About from './components/About'
+import Skills from './components/Skills'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Footer from './components/Footer'
@@ -80,6 +81,7 @@ function App() {
               <div id="about" className="lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
                 <About />
               </div>
+              <Skills />
               <Experience />
               <Projects />
               <Footer />

@@ -9,7 +9,7 @@ const Hero = ({ onStarWarsClick, showMatrix, setShowMatrix }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "experience", "projects"];
+      const sections = ["about", "skills", "experience", "projects"];
       const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       for (const sectionId of sections) {
@@ -121,6 +121,25 @@ const Hero = ({ onStarWarsClick, showMatrix, setShowMatrix }) => {
             ></span>
             <span className="text-xs font-semibold uppercase tracking-widest">
               {t("hero.nav.about")}
+            </span>
+          </a>
+          <a
+            href="#skills"
+            className={`group flex items-center gap-3 transition-colors ${
+              activeSection === "skills"
+                ? "text-slate-200"
+                : "text-slate-400 hover:text-slate-200"
+            }`}
+          >
+            <span
+              className={`h-px bg-slate-600 transition-all duration-300 ${
+                activeSection === "skills"
+                  ? "w-16 bg-slate-200"
+                  : "w-8 group-hover:w-16 group-hover:bg-slate-200"
+              }`}
+            ></span>
+            <span className="text-xs font-semibold uppercase tracking-widest">
+              {t("hero.nav.skills")}
             </span>
           </a>
           <a
