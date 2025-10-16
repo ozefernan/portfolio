@@ -102,6 +102,8 @@ const translations = {
     // Projects
     'proj.cox.title': 'Infraestrutura Monorepo - Cox Automation',
     'proj.cox.description': 'Arquitetura e manutenção de infraestrutura monorepo modular usando Lerna, streamlining desenvolvimento e compartilhamento de código entre múltiplos projetos. Desenvolvimento de aplicações React performáticas com Hooks e Redux, integradas com CMS e APIs terceiras.',
+    'proj.toolkit.title': 'Toolkit Dev',
+    'proj.toolkit.description': 'Plataforma all-in-one para desenvolvedores com navegador de documentação offline-first (15+ linguagens), 20+ ferramentas úteis (formatters, generators, calculators, references) e code snippets. Arquitetura 100% client-side com cache IndexedDB integrado à DevDocs API.',
 
     // Footer
     'footer.built': 'Built with',
@@ -166,6 +168,8 @@ const translations = {
     // Projects
     'proj.cox.title': 'Monorepo Infrastructure - Cox Automation',
     'proj.cox.description': 'Architecture and maintenance of modular monorepo infrastructure using Lerna, streamlining development and code sharing across multiple projects. Development of performant React applications with Hooks and Redux, integrated with CMS and third-party APIs.',
+    'proj.toolkit.title': 'Toolkit Dev',
+    'proj.toolkit.description': 'All-in-one platform for developers with offline-first documentation browser (15+ languages), 20+ useful tools (formatters, generators, calculators, references) and code snippets. 100% client-side architecture with IndexedDB cache integrated with DevDocs API.',
 
     // Footer
     'footer.built': 'Built with',
