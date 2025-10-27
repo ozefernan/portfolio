@@ -22,13 +22,6 @@ const Projects = () => {
       link: "https://github.com/ozefernan/Toolkit-Dev",
       image: "/projects/toolkit-dev-screenshot.png",
     },
-    {
-      title: t("proj.cox.title"),
-      description: t("proj.cox.description"),
-      tech: ["React", "TypeScript", "Redux", "Lerna", "Monorepo", "Webpack"],
-      link: "https://www.dealertrack.com.br/#/home",
-      image: "/projects/cox-screenshot.png",
-    },
   ];
 
   return (
