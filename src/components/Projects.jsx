@@ -9,6 +9,13 @@ const Projects = () => {
 
   const projects = [
     {
+      title: t("proj.timetracker.title"),
+      description: t("proj.timetracker.description"),
+      tech: ["JavaScript", "Node.js", "Express", "SQLite", "HTML5", "CSS3"],
+      link: "https://github.com/ozefernan/time-tracker",
+      image: "/projects/time-tracker-screenshot.png",
+    },
+    {
       title: t("proj.toolkit.title"),
       description: t("proj.toolkit.description"),
       tech: ["React", "TypeScript", "Vite", "TanStack Query", "Zustand", "IndexedDB", "Tailwind CSS"],

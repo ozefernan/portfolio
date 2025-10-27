@@ -104,6 +104,8 @@ const translations = {
     'proj.cox.description': 'Arquitetura e manutenção de infraestrutura monorepo modular usando Lerna, streamlining desenvolvimento e compartilhamento de código entre múltiplos projetos. Desenvolvimento de aplicações React performáticas com Hooks e Redux, integradas com CMS e APIs terceiras.',
     'proj.toolkit.title': 'Toolkit Dev',
     'proj.toolkit.description': 'Plataforma all-in-one para desenvolvedores com navegador de documentação offline-first (15+ linguagens), 20+ ferramentas úteis (formatters, generators, calculators, references) e code snippets. Arquitetura 100% client-side com cache IndexedDB integrado à DevDocs API.',
+    'proj.timetracker.title': 'Time Tracker',
+    'proj.timetracker.description': 'Aplicação web para freelancers controlarem horas trabalhadas com timer interativo, entrada manual de registros, estatísticas automáticas (hoje/semana/mês), banco de dados SQLite local e exportação CSV. Interface minimalista dark com edição e histórico completo.',
 
     // Footer
     'footer.built': 'Built with',
@@ -170,6 +172,8 @@ const translations = {
     'proj.cox.description': 'Architecture and maintenance of modular monorepo infrastructure using Lerna, streamlining development and code sharing across multiple projects. Development of performant React applications with Hooks and Redux, integrated with CMS and third-party APIs.',
     'proj.toolkit.title': 'Toolkit Dev',
     'proj.toolkit.description': 'All-in-one platform for developers with offline-first documentation browser (15+ languages), 20+ useful tools (formatters, generators, calculators, references) and code snippets. 100% client-side architecture with IndexedDB cache integrated with DevDocs API.',
+    'proj.timetracker.title': 'Time Tracker',
+    'proj.timetracker.description': 'Web application for freelancers to track working hours with interactive timer, manual entry, automatic statistics (today/week/month), local SQLite database and CSV export. Minimalist dark interface with full edit and history features.',
 
     // Footer
     'footer.built': 'Built with',
