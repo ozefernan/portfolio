@@ -8,7 +8,6 @@ import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Footer from './components/Footer'
 import LanguageToggle from './components/LanguageToggle'
-import DevNotice from './components/DevNotice'
 import StarWars from './components/StarWars'
 import MobileHeader from './components/MobileHeader'
 import MatrixRain from './components/MatrixRain'
@@ -49,8 +48,6 @@ function App() {
       {/* Mobile Header */}
       <MobileHeader />
 
-      {/* Fixed Development Notice */}
-      {!showMatrix && <DevNotice />}
 
       {/* Fixed Language Toggle Button */}
       <LanguageToggle />
