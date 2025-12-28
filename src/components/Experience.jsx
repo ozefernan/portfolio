@@ -9,10 +9,23 @@ const Experience = () => {
 
   const experiences = [
     {
+      period: t("exp.nubank.period"),
+      role: t("exp.nubank.role"),
+      company: t("exp.nubank.company"),
+      description: t("exp.nubank.description"),
+      logo: "/logos/nubank.png",
+      tech: [
+        "React",
+        "TypeScript",
+        "AI/GenAI",
+      ],
+    },
+    {
       period: t("exp.itau.period"),
       role: t("exp.itau.role"),
       company: t("exp.itau.company"),
       description: t("exp.itau.description"),
+      logo: "/logos/itau.svg",
       tech: [
         "Angular",
         "TypeScript",
@@ -29,6 +42,7 @@ const Experience = () => {
       role: t("exp.cox.role"),
       company: t("exp.cox.company"),
       description: t("exp.cox.description"),
+      logo: "/logos/cox.svg",
       tech: ["React", "TypeScript", "JavaScript", "Redux", "Lerna", "Monorepo"],
     },
     {
@@ -36,6 +50,7 @@ const Experience = () => {
       role: t("exp.santander.role"),
       company: t("exp.santander.company"),
       description: t("exp.santander.description"),
+      logo: "/logos/santander.svg",
       tech: ["COBOL", "JCL", "Batch Processing", "Mainframe"],
     },
   ];
@@ -83,12 +98,11 @@ const Experience = () => {
                 </time>
               </div>
               <div className="lg:col-span-3">
-                <h3 className="text-base font-semibold text-slate-200 group-hover:text-blue-400 transition-colors duration-300">
-                  <span className="block sm:inline">{exp.role}</span>
-                  <span className="hidden sm:inline text-slate-500"> · </span>
-                  <span className="block sm:inline mt-1 sm:mt-0">
-                    {exp.company}
-                  </span>
+                <h3 className="flex flex-wrap items-center gap-x-1 text-base font-semibold text-slate-200 group-hover:text-blue-400 transition-colors duration-300">
+                  <span>{exp.role}</span>
+                  <span className="text-slate-500">·</span>
+                  <img src={exp.logo} alt={exp.company} className="w-5 h-5 rounded" />
+                  <span>{exp.company}</span>
                 </h3>
                 <p className="mt-2 text-sm text-slate-400 leading-relaxed">
                   {exp.description}
