@@ -45,8 +45,8 @@ export const LanguageProvider = ({ children }) => {
 const translations = {
   pt: {
     // Hero
-    'hero.title': 'Engenheiro Front End',
-    'hero.description': 'Engenheiro Front End com 6+ anos de experiência em desenvolvimento de software, especializado em tecnologias frontend modernas e arquiteturas cloud.',
+    'hero.title': 'Engenheiro de Software',
+    'hero.description': 'Engenheiro de Software com 6+ anos de experiência em desenvolvimento, especializado em tecnologias frontend modernas e arquiteturas cloud.',
     'hero.nav.about': 'Sobre',
     'hero.nav.skills': 'Habilidades',
     'hero.nav.experience': 'Experiência',
@@ -58,7 +58,7 @@ const translations = {
 
     // About
     'about.p1.intro': 'Sou um',
-    'about.p1.title': 'Engenheiro Front End',
+    'about.p1.title': 'Engenheiro de Software',
     'about.p1.text': 'com mais de 6 anos de experiência em desenvolvimento de software, especializado em tecnologias frontend modernas e arquiteturas cloud. Com formação em Sistemas de Informação pela Faculdade Impacta Tecnologia (2017-2020), construí uma carreira sólida em desenvolvimento web.',
     'about.p2.text1': 'Atualmente trabalho no',
     'about.p2.company1': 'Itaú Unibanco',
@@ -166,8 +166,8 @@ const translations = {
   },
   en: {
     // Hero
-    'hero.title': 'Front End Engineer',
-    'hero.description': 'Front End Engineer with 6+ years of experience in software development, specializing in modern frontend technologies and cloud architectures.',
+    'hero.title': 'Software Engineer',
+    'hero.description': 'Software Engineer with 6+ years of experience in development, specializing in modern frontend technologies and cloud architectures.',
     'hero.nav.about': 'About',
     'hero.nav.skills': 'Skills',
     'hero.nav.experience': 'Experience',
@@ -179,7 +179,7 @@ const translations = {
 
     // About
     'about.p1.intro': 'I am a',
-    'about.p1.title': 'Front End Engineer',
+    'about.p1.title': 'Software Engineer',
     'about.p1.text': 'with 6+ years of experience in software development, specializing in modern frontend technologies and cloud architectures. With a degree in Information Systems from Faculdade Impacta Tecnologia (2017-2020), I have built a solid career in web development.',
     'about.p2.text1': 'Currently working at',
     'about.p2.company1': 'Itaú Unibanco',
